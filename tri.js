@@ -7,12 +7,74 @@ var circleArrayBlack = [];
 var resetButton = document.querySelector("#reset");
 var circleOne = document.querySelector("#one");
 var allCircles = document.querySelectorAll(".circle");
+var moveCount = 2;
+
+//decision tree - first 3 moves
+var moves = [
+   {play: 1, start: 6, remove: 3, end: 1},
+   {play: 1, start: 4, remove: 3, end: 1},
+   {play: 2, start: 15, remove: 10, end: 6},
+   {play: 2, start: 13, remove: 9, end: 6},
+   {play: 2, start: 8, remove: 5, end: 2},
+   {play: 2, start: 4, remove: 5, end: 6},
+   {play: 2, start: 6, remove: 5, end: 4},
+   {play: 2, start: 9, remove: 5, end: 2},
+   {play: 2, start: 13, remove: 8, end: 4},
+   {play: 2, start: 11, remove: 7, end: 4},
+   {play: 3, start: 8, remove: 5, end: 3},
+   {play: 3, start: 8, remove: 9, end: 10},
+   {play: 3, start: 13, remove:14, end: 15},
+   {play: 3, start: 2, remove: 5, end: 9},
+   {play: 3, start: 4, remove: 8, end: 13},
+   {play: 3, start: 8, remove: 5, end: 3},
+   {play: 3, start: 10, remove:6, end: 3},
+   {play: 3, start: 7, remove: 8, end: 9},
+   {play: 3, start: 11, remove: 12, end: 13},
+   {play: 3, start: 15, remove: 14, end: 13},
+   {play: 3, start: 15, remove: 10, end: 6},
+   {play: 3, start: 14, remove: 9, end: 5},
+   {play: 3, start: 13, remove: 9, end: 6},
+   {play: 3, start: 10, remove: 9, end: 8},
+   {play: 3, start: 1, remove: 3, end: 6},
+   {play: 3, start: 14, remove: 9, end: 5},
+   {play: 3, start: 13, remove: 8, end: 4},
+   {play: 3, start: 12, remove: 8, end: 5},
+   {play: 3, start: 11, remove: 7, end: 4},
+   {play: 3, start: 10, remove: 6, end: 3},
+   {play: 3, start: 1, remove: 2, end: 4},
+   {play: 3, start: 1, remove: 3, end: 6},
+   {play: 3, start: 7, remove: 4, end: 2},
+   {play: 3, start: 12, remove: 8, end: 5},
+   {play: 3, start: 13, remove: 9, end: 6},
+   {play: 3, start: 14, remove: 9, end: 5},
+   {play: 3, start: 15, remove: 10, end: 6},
+   {play: 3, start: 1, remove: 2, end: 4},
+   {play: 3, start: 7, remove: 4, end: 2},
+   {play: 3, start: 11, remove: 7, end: 4},
+   {play: 3, start: 12, remove: 8, end: 5},
+   {play: 3, start: 13, remove: 9, end: 6},
+   {play: 3, start: 14, remove: 9, end: 5},
+   {play: 3, start: 15, remove:10 , end: 6},
+   {play: 3, start: 3, remove: 5, end: 8},
+   {play: 3, start: 6, remove: 9, end: 13},
+   {play: 3, start: 7, remove: 4, end: 2},
+   {play: 3, start: 9, remove: 5, end: 2},
+   {play: 3, start: 10, remove: 9, end: 8},
+   {play: 3, start: 9, remove: 5, end: 2},
+   {play: 3, start: 9, remove: 8, end: 7},
+   {play: 3, start: 13, remove:12, end: 11}
+]
+
 
 //start - reset toggle button
 resetButton.addEventListener("click", function () {
    if (!gameStarted) {
       //function to start game
       startGame();
+
+      //change color circle onClick if valid
+      validStart();
+
    } else {
       //function to reset all circles to green
       resetCircles();
@@ -41,6 +103,9 @@ function resetCircles() {
    gameStarted = false;
 }
 
+
+//Check if circle clicked is valid and change color if it is
+function validStart(){
 // function to change circle color to white onclick if game started
 window.onload = function () {
    var anchors = document.getElementsByClassName("circle");
@@ -58,4 +123,17 @@ window.onload = function () {
          }
       }
    }
+}
+}
+
+function validStart(){
+
+   function filterByPlay(item) {
+   if (item.play === moveCount){
+     return true;
+   }
+} 
+
+var movesByPlay = moves.filter(filterByPlay);
+console.log('Valid play Array\n', movesByPlay); 
 }
