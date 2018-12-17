@@ -80,6 +80,7 @@ h1 {
   height: 50px;
   width: 50px;
   border-radius: 50px;
+  border: none;
   text-align: center;
   font-weight: bold;
   font-size: 150%;
