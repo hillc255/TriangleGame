@@ -41,7 +41,7 @@ var moves = [{
       play: 2,
       start: 8,
       remove: 5,
-      end: 2
+      end: 3
    },
    {
       play: 2,
@@ -432,6 +432,7 @@ function findEndValue(movesByPlay, y, x) {
           if (movesByPlay[j].end === Number(y) && movesByPlay[j].start === Number(x)){
                 r =  movesByPlay[j].remove;
                 console.log("remove value: " + r);
+                  document.getElementById(x).style.border = 'none';
                   document.getElementById(y).style.backgroundColor = 'green';
                   document.getElementById(x).style.backgroundColor = 'black';
                   document.getElementById(r).style.backgroundColor = 'black';
