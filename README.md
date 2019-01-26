@@ -18,6 +18,11 @@ It is based on a real game board from "Cracker Barrel Old Country Store" given t
 </p>
 </br>
 
+## Demo
+ 
+Try it out! Play the game here:
+https://hillc255.github.io/TriangleGame/
+
 ## Code Description
 
 There is only 1 html screen - the Triangle screen built with html and css.  Javascript is used for the logic removing pieces from the triangle game board.
