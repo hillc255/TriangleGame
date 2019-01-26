@@ -21,6 +21,7 @@ It is based on a real game board from "Cracker Barrel Old Country Store" given t
 ## Demo
  
 Try it out! Play the game here:
+
 https://hillc255.github.io/TriangleGame/
 
 ## Code Description
