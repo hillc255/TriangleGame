@@ -37,7 +37,7 @@ h1 {
 }
 
 
-.circle:hover{
+.circle:hover {
   color: white;
 }
 
@@ -62,13 +62,13 @@ h1 {
   left: -302px;
 }
 
-  .row1a {
+.row1a {
   display: flex;
   left: 440px;
   line-height: 25px;
 }
 
-  .row {
+.row {
   display: flex;
   margin: 0 auto;
   line-height: 50px;
@@ -80,6 +80,7 @@ h1 {
   height: 50px;
   width: 50px;
   border-radius: 50px;
+  border: none;
   text-align: center;
   font-weight: bold;
   font-size: 150%;
